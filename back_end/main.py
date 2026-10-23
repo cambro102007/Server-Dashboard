@@ -37,6 +37,7 @@ def get_monitoring():
     "ram": monitor.get_memory_usage(),
     "up_time": monitor.get_uptime(),
     "storage": monitor.get_storage_usage(),
-    "temp": monitor.get_temp()
+    "temp": monitor.get_temp(),
+    "network": monitor.get_network_usage(),
  }
 

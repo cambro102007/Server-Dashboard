@@ -1,6 +1,6 @@
 async function updateServices() {
     // gets services responce from api
-    const response = await fetch("http://10.0.0.252:8000/services");
+    const response = await fetch("http://127.0.0.1:8000/services");
     // turns responce to json format
     const data = await response.json();
 
@@ -16,16 +16,22 @@ async function updateServices() {
 }
 
 async function updatemonitoring() {
-    // gets services responce from api
-    const response = await fetch("http://10.0.0.252:8000/monitor");
+    // Gets services responce from api
+    // Raspberrypi http://10.0.0.252:8000/monitor
+    // Mac http://127.0.0.1:8000/monitor
+    const response = await fetch("http://127.0.0.1:8000/monitor");
     // turns responce to json format
     const data = await response.json();
 
     //gets element from html and changes it to the jsons cpu key value value
     document.getElementById("cpu").textContent = data.cpu + "%";
     document.getElementById("ram").textContent = data.ram + "%";
-    document.getElementById("storage").textContent = data.storage + "%";
-    document.getElementById("temp").textContent = data.temp + "C";
+    document.getElementById("storage").textContent = data.storage.percent + "%";
+    document.getElementById("temp").textContent = data.temp === null ? "N/A" : data.temp + "°C";
+    document.getElementById("upload").textContent = data.network.upload + " MB/s";
+    document.getElementById("download").textContent = data.network.download + " MB/s";
+    
+    
 
 }
 

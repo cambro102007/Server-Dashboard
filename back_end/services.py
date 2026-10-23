@@ -8,12 +8,7 @@ services = {
 }
 
 def get_server_status(server):
-    res = subprocess.run(
-        ["systemctl", "is-active", server],
-        capture_output=True,
-        text=True
-    )
-    return res.stdout.strip() == "active"
+    return None
 
 def get_all_services():
     return {
