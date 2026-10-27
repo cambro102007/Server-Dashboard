@@ -3,53 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Server Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="dashboard.js" defer></script>
 </head>
 <body>
-
-    <div class="monitor-box">
-        <div class="monitor-stats">
-            <p>CPU: <span id="cpu">Loading...</span></p>
-
-            <div class="progress-bar">
-                <div class="progress-fill" id="cpu-bar"></div>
-            </div>
-        </div>
-        <div class="monitor-stats">
-            <p>RAM: <span id="ram">Loading...</span></p>
-
-            <div class="progress-bar">
-                <div class="progress-fill" id="ram-bar"></div>
-            </div>
-        </div>
-        <div class="monitor-stats">
-            <p>Storage: <span id="storage">Loading...</span></p>
-
-            <div class="progress-bar">
-                <div class="progress-fill" id="storage-bar"></div>
-            </div>
-        </div>
-        <div class="monitor-stats">
-            <p>Temp: <span id="temp">Loading...</span></p>
-        </div>
-        <div class="monitor-stats">
-            <p>Upload: <span id="upload">Loading...</span></p>
-        </div>
-        <div class="monitor-stats">
-            <p>Download: <span id="download">Loading...</span></p>
-        </div>
-        
-        <script src="dashboard.js"></script>
+    <div class="sidebar">
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#overview" class="nav-link active">Overview</a>
+            <a href="#monitoring" class="nav-link">Monitoring</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#storage-card" class="nav-link">Storage</a>
+        </nav>
     </div>
 
-    <div class="service-box">
-        <h2>Server Services</h2>
-        
-        <p>Jellyfin: <span id="jellyfin">Loading...</span></p>
-        <p>PiHole: <span id="pihole">Loading...</span></p>
-        <p>qbittorrent: <span id="qbittorrent">Loading...</span></p>
-        <p>nginx: <span id="nginx">Loading...</span></p>
-    </div>
+    <main class="main-content" id="overview">
+        <h1>Server overview</h1>
+
+        <h2 id="monitoring">System monitoring</h2>
+
+        <div class="monitor-box">
+            <div class="monitor-stats">
+                <p>CPU</p>
+                <span id="cpu">Loading...</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="cpu-bar"></div>
+                </div>
+            </div>
+
+            <div class="monitor-stats">
+                <p>RAM</p>
+                <span id="ram">Loading...</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="ram-bar"></div>
+                </div>
+            </div>
+
+            <div class="monitor-stats" id="storage-card">
+                <p>Storage</p>
+                <span id="storage">Loading...</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="storage-bar"></div>
+                </div>
+            </div>
+
+            <div class="monitor-stats">
+                <p>Temperature</p>
+                <span id="temp">Loading...</span>
+            </div>
+
+            <div class="monitor-stats">
+                <p>Upload</p>
+                <span id="upload">Loading...</span>
+            </div>
+
+            <div class="monitor-stats">
+                <p>Download</p>
+                <span id="download">Loading...</span>
+            </div>
+        </div>
+
+        <section class="service-box" id="services">
+            <h2>Server services</h2>
+            <p>Jellyfin <span id="jellyfin">Loading...</span></p>
+            <p>Pi-hole <span id="pihole">Loading...</span></p>
+            <p>qBittorrent <span id="qbittorrent">Loading...</span></p>
+            <p>Nginx <span id="nginx">Loading...</span></p>
+        </section>
+    </main>
 </body>
 </html>

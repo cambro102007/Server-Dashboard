@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0b1722;
+    color: #f0f4fa;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100dvh;
+    padding: 24px 12px;
+    overflow-y: auto;
+    background-color: #0e1d2d;
+    border-right: 1px solid #192b3c;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-link {
+    padding: 14px 20px;
+    border-left: 3px solid transparent;
+    border-radius: 6px;
+    color: #b5c5d9;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #182d40;
+    color: white;
+}
+
+.nav-link.active {
+    background-color: #20374d;
+    border-left-color: #4de1f5;
+    color: #67e8f9;
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid #4de1f5;
+    outline-offset: 2px;
+}
+
+/* Keeps the dashboard beside the fixed sidebar */
+.main-content {
+    margin-left: 240px;
+    padding: 28px;
+}
+
+h1 {
+    margin: 0 0 32px;
+    font-size: 32px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+}
+
+.monitor-box {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.monitor-stats {
+    min-width: 0;
+    min-height: 150px;
+    padding: 24px;
+    background-color: #142332;
+    border: 1px solid #223648;
+    border-radius: 10px;
+}
+
+.monitor-stats p {
+    margin: 0 0 12px;
+    color: #b5c5d9;
+    font-size: 14px;
+}
+
+.monitor-stats span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #243b50;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #43d9ed;
+    transition: width 0.5s ease;
+}
+
+#ram-bar {
+    background-color: #399cf8;
+}
+
+#storage-bar {
+    background-color: #30d99a;
+}
+
+.service-box {
+    padding: 24px;
+    background-color: #142332;
+    border: 1px solid #223648;
+    border-radius: 10px;
+}
+
+.service-box p {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid #223648;
+    color: #b5c5d9;
+}
+
+.service-box p:last-child {
+    border-bottom: none;
+}
