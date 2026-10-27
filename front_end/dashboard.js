@@ -25,8 +25,11 @@ async function updatemonitoring() {
 
     //gets element from html and changes it to the jsons cpu key value value
     document.getElementById("cpu").textContent = data.cpu + "%";
+    document.getElementById("cpu-bar").style.width = data.cpu + "%";
     document.getElementById("ram").textContent = data.ram + "%";
+    document.getElementById("ram-bar").style.width = data.ram + "%";
     document.getElementById("storage").textContent = data.storage.percent + "%";
+    document.getElementById("storage-bar").style.width = data.cpu + "%";
     document.getElementById("temp").textContent = data.temp === null ? "N/A" : data.temp + "°C";
     document.getElementById("upload").textContent = data.network.upload + " MB/s";
     document.getElementById("download").textContent = data.network.download + " MB/s";

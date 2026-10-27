@@ -49,6 +49,6 @@ def get_network_usage():
     download = (second_network.bytes_recv - first_network.bytes_recv) / 1000000
 
     return {
-        "upload": round(upload, 5),
-        "download": round(download, 5)
+        "upload": round(upload, 3),
+        "download": round(download, 3)
     }
